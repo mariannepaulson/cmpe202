@@ -4,8 +4,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class Inspector here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Marianne Paulson
+ * @version 1/27/2019
  */
 public class Inspector extends Alien
 {
@@ -26,10 +26,7 @@ public class Inspector extends Alien
         System.out.println("Inspecting");
         System.out.println("Coin: " + coin.getClass() );
         if (coin.getClass() == Quarter.class) {
-            // RandomPicker randompicker = new RandomPicker();
-            // GreenPicker greenpicker = new GreenPicker();
-            // pickers.add(randompicker);
-            // pickers.add(greenpicker);
+            
             World world = getWorld();
             if(world != null) {
                 for (Object object : world.getObjects(RandomPicker.class))
@@ -48,10 +45,10 @@ public class Inspector extends Alien
 
                 if (pickerChosen.getClass() == GreenPicker.class){
                     GreenPicker green = (GreenPicker) pickerChosen;
-                    green.pick();
+                    green.pick(Greenfoot.getRandomNumber(500));
                 } else {
                     RandomPicker random = (RandomPicker) pickerChosen;
-                    random.pick();
+                    random.pick(Greenfoot.getRandomNumber(500));
 
                 }
             }

@@ -40,5 +40,11 @@ public class GumballWorld extends World
         GreenPicker greenpicker = new GreenPicker();
         addObject(greenpicker, 686, 454);
         greenpicker.setLocation(669, 456);
+        Quarter quarter2 = new Quarter();
+        addObject(quarter2,71,409);
+        quarter2.setLocation(66,343);
+        Quarter quarter3 = new Quarter();
+        addObject(quarter3,48,480);
+        quarter3.setLocation(66,441);
     }
 }

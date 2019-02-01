@@ -10,7 +10,8 @@ public class GumballMachine extends Actor
 {
     Message m = new Message();
     Actor haveCoin;
-    Boolean haveCoin2;
+    Boolean haveCoinFlag = false;
+    Actor coin;
 
     public GumballMachine()
     {
@@ -24,38 +25,39 @@ public class GumballMachine extends Actor
 
         if (isTouched) 
         {
-            setMessage("Have coin");
+            if (haveCoinFlag == false){
+                setMessage("Have coin");
 
-            /*Actor coin;
-            coin = getOneIntersectingObject(Coin.class);
-            World world = getWorld();
-            world.removeObject(coin);
-             */
+                haveCoinFlag= true;
+
+                coin = getOneIntersectingObject(Coin.class);
+                
+                World world = getWorld();
+                world.removeObject(coin);
+
+            }
 
         }
-
-       
-
-        if (Greenfoot.mouseClicked(this))
+        if (Greenfoot.mousePressed(this))
         {
-            setMessage("Crank turned");
+            if (haveCoinFlag == true) {
 
-            Actor coin;
-            Inspector inspector = null;
-            coin = getOneIntersectingObject(Coin.class);
+                setMessage("Crank turned");
 
-            World world = getWorld();
+                Inspector inspector = null;
 
-            for (Object object : world.getObjects(Inspector.class))
-            {
-                inspector = (Inspector) object; 
+                World world = getWorld();
+
+                for (Object object : world.getObjects(Inspector.class))
+                {
+                    inspector = (Inspector) object; 
+                }
+
+                inspector.inspectCoin((Coin)coin);
+
+                haveCoinFlag = false;
             }
-            
-            inspector.inspectCoin((Coin)coin);
 
-            world.removeObject(coin);
-
-            
         } 
     }
 

@@ -17,7 +17,7 @@ public class RandomPicker extends Picker
         // Add your action code here.
     }  
 
-    public void pick() {
+    public void pick(int x) {
         Gumball gb = new GreenGumball();
         int lottery = Greenfoot.getRandomNumber(3);
         switch(lottery) {
@@ -27,7 +27,7 @@ public class RandomPicker extends Picker
         }
 
         World world = getWorld();
-        world.addObject( gb, 373, 482 ) ;
+        world.addObject( gb, x, 482 ) ;
     }
 }
 

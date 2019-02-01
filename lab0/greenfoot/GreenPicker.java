@@ -17,9 +17,9 @@ public class GreenPicker extends Picker
         // Add your action code here.
     }    
 
-    public void pick() {
+    public void pick(int x) {
        
         World world = getWorld();
-        world.addObject( new GreenGumball(), 373, 482 ) ;
+        world.addObject( new GreenGumball(), x, 482 ) ;
     }
 }
