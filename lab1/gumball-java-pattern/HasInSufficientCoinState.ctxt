@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=SoldState
+comment0.target=HasInSufficientCoinState
 comment1.params=gumballMachine
-comment1.target=SoldState(GumballMachine)
+comment1.target=HasInSufficientCoinState(GumballMachine)
 comment2.params=coin
 comment2.target=void\ insertCoin(int)
 comment3.params=
