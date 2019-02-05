@@ -1,16 +1,14 @@
 import java.util.ArrayList;
+
 public class GumballMachine
 {
-
     private int num_gumballs;
     private int price;
     protected ArrayList<Integer> acceptedCoins;
     private int total = 0;
     private boolean insertedEnoughMoney;
 
-
     public GumballMachine( int size, int price, ArrayList<Integer> acceptedCoins)
-
     {
         // initialise instance variables
         this.num_gumballs = size;
@@ -18,17 +16,22 @@ public class GumballMachine
         this.acceptedCoins = new ArrayList<Integer>(acceptedCoins);
         this.total = 0;
         this.insertedEnoughMoney = false;
-        
+
     }
 
     public void insertCoin(int coin)
     {
         if(acceptedCoins.contains(coin)) {
             total += coin;
-            if ( total >= price )
+            if ( total >= price ) {
                 this.insertedEnoughMoney = true ;
-            else 
+                System.out.println("Thanks. Gumball being ejected");
+            }
+            else {
                 this.insertedEnoughMoney = false ;
+                System.out.println("Thanks. Please insert: " + (price-total) + " more ");
+
+            }
         }
         else 
             System.out.println("Invalid coin");
@@ -42,7 +45,7 @@ public class GumballMachine
             {
                 this.num_gumballs-- ;
                 this.insertedEnoughMoney = false ;
-                System.out.println( "Thanks.  Gumball Ejected!" ) ;
+                System.out.println( "Gumball Ejected!" ) ;
             }
             else
             {
