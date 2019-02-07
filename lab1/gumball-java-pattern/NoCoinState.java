@@ -10,13 +10,20 @@ public class NoCoinState implements State {
         System.out.println("You inserted a Coin");
         gumballMachine.setTotalValueInserted(coin);
 
-        if (gumballMachine.getTotalValueInserted() >= gumballMachine.getPrice()) {
-            gumballMachine.setTotalValueInserted(0);
-            gumballMachine.setState(gumballMachine.getHasSufficientCoinState());
+        if (gumballMachine.acceptedCoins.contains(coin)) {
+
+            if (gumballMachine.getTotalValueInserted() >= gumballMachine.getPrice()) {
+
+                gumballMachine.setTotalValueInserted(0);
+                gumballMachine.setState(gumballMachine.getHasSufficientCoinState());
+            }
+            else {
+
+                gumballMachine.setState(gumballMachine.getHasInSufficientCoinState());
+            }
         }
         else {
-                
-            gumballMachine.setState(gumballMachine.getHasInSufficientCoinState());
+            System.out.println("Invalid coin");
         }
     }
 
