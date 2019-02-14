@@ -11,7 +11,8 @@ Made Attributes Compartment empty by unclicking Attribute Compartment under Init
 
 For all Classes, only Public Methods (including Constructors) show.
 
-I chose to show Methods Implemented from Interfaces.
+I did NOT chose to show Methods Implemented from Interfaces to not clutter the diagram.
+I manually deleted these inherited methods.
 
 Method Signatures are shown on Interfaces.
 
