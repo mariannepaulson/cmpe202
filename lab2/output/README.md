@@ -16,7 +16,7 @@ I manually deleted these inherited methods.
 
 Method Signatures are shown on Interfaces.
 
-I chose to display Abstract methods in "italics".
+I chose to display Abstract classes in "italics".
 
 Only show Dependency Relationships that are Dependent on Interfaces
 
@@ -33,7 +33,7 @@ Included Activation Bars.
 
 Included parameters for all messages from caller participants to callees.
 
-I chose to include return message lines and print output to console from Diagram.
+I chose to exclude return message lines and print output to console from Diagram.
 
 I did not include constructor calls. I assumed all participants have been
 instantiated.
