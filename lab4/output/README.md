@@ -1,45 +1,59 @@
 | **Customer** |
 | --- |
-| **Responsibilities** | **Collaborators** |
+| **Responsibilities** |   |
 | Customer knows its name, no, and party size |   |
-| Customer signs up on the waitlist via their phone | WaitlistManager |
-| Customer types in STOP to receive messages when customer receives a confirmation message and no longer want to wait | WaitlistManager |
+| Customer signs up on the waitlist via their phone |   |
+| Customer types in STOP to receive messages when customer receives a confirmation message and no longer want to wait |   |
+| **Collaborators** |   |
+| WaitlistManager |   |
 
-Â­Â­Â­
+­­­
 
 | **WaitlistManager** |
 | --- |
-| **Responsibilities** | **Collaborators** |
+| **Responsibilities** |   |
 | WaitListManager knows about the wait list queue |   |
-| Adds a particular customer to the back of the waiting list when a customer signs up on the waitlist via their phone | Customer |
-| Deletes a particular customer from the waiting list when customer types in STOP to no longer be on the waitlist | Customer |
-| Deletes a particular customer from the waiting list when customer confirms with &quot;CONFIRM&quot; or types in &quot;LEAVE&quot; | TableHandler1 |
+| Adds a particular customer to the back of the waiting list when a customer signs up on the waitlist via their phone |   |
+| Deletes a particular customer from the waiting list when customer types in STOP to no longer be on the waitlist |   |
+| Deletes a particular customer from the waiting list when customer confirms with &quot;CONFIRM&quot; or types in &quot;LEAVE&quot; |   |
+| **Collaborators** |   |
+| Customer |   |
+| TableHandler1 |   |
 
 | **TableManager** |
 | --- |
-| **Responsibilities** | **Collaborators** |
+| **Responsibilities** |   |
 | TableManager knows the size and status of the next available table |   |
-| TableManager notifies the TableHandler1 when the next table becomes available | TableHandler1 |
-
-
+| TableManager notifies the TableHandler1 when the next table becomes available |   |
+| **Collaborators** |   |
+| TableHandler1 |   |
 
 | **TableHandler1** |
 | --- |
-| **Responsibilities** | **Collaborators** |
+| **Responsibilities** |   |
 | Handler knows the next handler to handle the request if it cannot process the request |   |
-| TableHandler1 receives a message with table available and its size from TableManager when a table becomes available | TableManager |
-| Handler notifies the next customer in line that satisfy the party size requirements | Customer |
-| If the handler receives a CONFIRM message from the customer when being notified, TableHandler1 notifies WaitListManager to delete | WaitListManager |
-| If the handler receives a LEAVE message from the customer when being notified, the handler notifies TableHandler2 to handle the request | TableHandler2 |
-| If the handler cannot accommodate the size it sends the request to TableHandler2 to assign | TableHandler2 |
+| TableHandler1 receives a message with table available and its size from TableManager when a table becomes available |   |
+| Handler notifies the next customer in line that satisfy the party size requirements |   |
+| If the handler receives a CONFIRM message from the customer when being notified, TableHandler1 notifies WaitListManager to delete |   |
+| If the handler receives a LEAVE message from the customer when being notified, the handler notifies TableHandler2 to handle the request |   |
+| If the handler cannot accommodate the size it sends the request to TableHandler2 to assign |   |
+| **Collaborators** |   |
+| TableManager |   |
+| Customer |   |
+| WaitListManager |   |
+| TableHandler2 |   |
 
 | **TableHandler2** |
 | --- |
-| **Responsibilities** | **Collaborators** |
-| Handler searches the next customer in line that satisfy the party size requirement | TableHandler1 |
-| Handler notifies the next customer in line that satisfy the party size requirements | Customer |
-| If the handler receives a CONFIRM message from the customer when being notified, TableHandler1 notifies WaitListManager to delete | WaitListManager |
-| If the handler receives a LEAVE message from the customer when being notified, the handler finds the next customer in line that the table request satisfies and sends a message to the waitlist manageger to delete customer from queue | WaitListManager |
+| **Responsibilities** |   |
+| Handler searches the next customer in line that satisfy the party size requirement |   |
+| Handler notifies the next customer in line that satisfy the party size requirements |   |
+| If the handler receives a CONFIRM message from the customer when being notified, TableHandler1 notifies WaitListManager to delete |   |
+| If the handler receives a LEAVE message from the customer when being notified, the handler finds the next customer in line that the table request satisfies and sends a message to the waitlist manageger to delete customer from queue |   |
+| **Collaborators** |   |
+| TableHandler1 |   |
+| Customer |   |
+| WaitListManager |   |
 
 I used Observer Pattern and Chain of Command pattern to solve this problem.
 
