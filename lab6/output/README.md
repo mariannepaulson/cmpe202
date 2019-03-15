@@ -8,5 +8,39 @@ For example, a burger can have many kinds of different toppings.
 Therefore, it is wise to keep a composite with an array that can hold
 all the "children" that varies dynamically when creating an order.
 
-A screenprint of the classes used is shown in Bluej.png. The output is
-shown in Printout.txt
+Below is the output from the program. I print package slip first.
+Then the receipt.
+
+Order Number: 1
+
+          FIVE GUYS
+
+
+1 LBB
+    LETTUCE
+    TOMATO
+    ->|G ONION
+    ->|JALA Grilled
+    {{{{BACON}}}}
+
+1 LTL CAJ
+
+
+
+          FIVE GUYS
+
+Order Number: 1
+
+1 LBB        		 5.59
+    {{{{BACON}}}}
+    LETTUCE
+    TOMATO
+    ->|G ONION
+    ->|JALA Grilled
+
+1 LTL CAJ    		 2.79
+
+
+  Sub. Total:		$8.38
+  Tax:       		$0.75
+  Total:     		$9.13
